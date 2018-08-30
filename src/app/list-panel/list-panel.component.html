@@ -1,0 +1,86 @@
+<div class="container float-right" >
+          <h1>{{class}}</h1>
+          <div *ngIf="isExercise">
+            <div class="row" >
+                    <div class="col-md-5">
+                        Name
+                    </div>
+                    <div class="col-md-5">
+                        Type
+                    </div>
+                    <div class="col-md-2">
+                        One Rep Max
+                    </div>
+            </div>
+          <div  *ngFor="let item of items">
+                <hr>
+            <div class="row" [routerLink]="['/exercise', item.exerciseID]">
+                <div class="col-md-5" >
+                    {{item.exerciseName}}
+                </div>
+                <div class="col-md-5">
+                    {{item.exerciseType}}
+                </div>
+                <div class="col-md-2">
+                    {{item.exerciseMax}}
+                </div>
+            </div>
+            </div>
+            </div>
+            <div *ngIf="isWorkout">
+                    <div class="row" >
+                            <div class="col-md-5">
+                                Number of Sets
+                            </div>
+                            <div class="col-md-5">
+                                Exercise
+                            </div>
+                            <div class="col-md-2">
+                                Weight
+                            </div>
+                    </div>
+                    <div  *ngFor="let item of sessionItems">
+                          <hr>
+                              <div class="row" >
+                                  <div class="col-md-5">
+                                    {{item.Sets.length}}
+                                  </div>
+                                  <div class="col-md-5">
+                                    {{item.exerciseName}}
+                                  </div>
+                                  <div class="col-md-2">
+                                    {{item.exerciseWeight}}
+                                </div>
+                              </div>
+                          </div>
+            </div> 
+            <div *ngIf="isSet">
+                <div class="row" >
+                        <div class="col-md-5">
+                            Exercise
+                        </div>
+                        <div class="col-md-2">
+                            Reps
+                        </div>
+                        <div class="col-md-2">
+                            Weight
+                        </div>
+                    </div>
+                <div  *ngFor="let item of setItems">
+                        <hr>
+                            <div class="row" >
+                                <div class="col-md-5">
+                                {{item.setName}}
+                                </div>
+                                <div class="col-md-2">
+                                {{item.setReps}}
+                                </div>
+                                <div class="col-md-2">
+                                {{item.setWeight}}
+                                </div>
+                            </div>
+                        </div>
+    </div>                
+        </div>
+
+
